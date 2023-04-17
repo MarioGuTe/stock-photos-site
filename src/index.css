@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+  --third-color: hsl(0 0% 0%/0.65);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -21,10 +27,11 @@ body,
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 0.6rem;
+  border: 1px solid blue;
 }
 
 .header-logo-container {
-  background: black;
+  background: var(--primary-color);
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -34,7 +41,7 @@ body,
 }
 
 .header-logo-container p {
-  color: white;
+  color: var(--secondary-color);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -42,4 +49,22 @@ body,
 .header-favorites-container p {
   font-size: 1rem;
   font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+.title-section p {
+  color: var(--third-color);
 }
