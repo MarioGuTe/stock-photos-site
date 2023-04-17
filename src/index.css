@@ -73,10 +73,11 @@ h1 {
 
 .input-container {
   width: 100%;
+  position: relative;
 }
 
 .input-container input {
-  padding: 8px;
+  padding: 8px 6% 8px 6%;
   border-radius: 50px;
   border: 2px solid #d9d9d9;
   width: 85%;
@@ -88,4 +89,11 @@ input::placeholder {
   font-weight: 400;
   color: #b6b6b6;
   text-align: center;
+}
+
+.input-container .icon {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  color: #b6b6b6;
 }
