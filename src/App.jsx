@@ -1,4 +1,5 @@
 import Header from "./assets/components/Header";
+import Input from "./assets/components/Input";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
           <h1>FantastiFotos</h1>
           <p>fotografías profesionales a tu alcance</p>
         </div>
+        <Input />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@
   --primary-color: black;
   --secondary-color: white;
   --third-color: hsl(0 0% 0%/0.65);
+  --fourth-color: hsl(0 0% 0%/0.85);
 }
 
 * {
@@ -59,6 +60,7 @@ body,
   justify-content: center;
   border: 2px solid black;
   text-align: center;
+  gap: 10px;
 }
 
 h1 {
@@ -67,4 +69,23 @@ h1 {
 
 .title-section p {
   color: var(--third-color);
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-container input {
+  padding: 8px;
+  border-radius: 50px;
+  border: 2px solid #d9d9d9;
+  width: 85%;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #b6b6b6;
+  text-align: center;
 }
