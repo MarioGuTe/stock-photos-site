@@ -10,11 +10,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character`)
+    fetch(`https://api.pexels.com/v1/search?query=people`, {
+      headers: {
+        Authorization: apiKey,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        setImages(data.results);
+        setImages(data.photos);
+        // console.log(data);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
@@ -42,12 +49,8 @@ function App() {
       <section className="img-section">
         <h2>Imágenes Royalty Free</h2>
         <div className="img-gallery-container">
-          {images.map((character) => (
-            <ImageGallery
-              key={character.id}
-              image={character.image}
-              text={character.name}
-            />
+          {images.map((image) => (
+            <ImageGallery key={image.id} image={image.src.large} />
           ))}
         </div>
       </section>
