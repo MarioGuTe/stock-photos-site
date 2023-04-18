@@ -17,7 +17,7 @@ html,
 body,
 #root {
   height: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -28,7 +28,7 @@ body,
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 0.6rem;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .header-logo-container {
@@ -58,9 +58,10 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   text-align: center;
-  gap: 10px;
+  padding: 1em 0;
+  gap: 1.8em;
 }
 
 h1 {
@@ -104,7 +105,9 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid aquamarine;
+  gap: 1em;
+  /* border: 2px solid aquamarine; */
+  padding: 1em 0;
 }
 
 .categories-section h2 {
@@ -124,7 +127,7 @@ input::placeholder {
   font-size: 0.92rem;
   font-weight: 600;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 5px 6px;
 }
 
 .categorie-btn:focus {
