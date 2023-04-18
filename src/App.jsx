@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "./assets/components/Header";
 import Input from "./assets/components/Input";
 import CategoriesButton from "./assets/components/CategoriesButton";
@@ -5,6 +6,20 @@ import ImageGallery from "./assets/components/ImageGallery";
 import "./App.css";
 
 function App() {
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [term, setTerm] = useState("");
+
+  useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/character`)
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data.results);
+        setIsLoading(false);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -27,10 +42,13 @@ function App() {
       <section className="img-section">
         <h2>Imágenes Royalty Free</h2>
         <div className="img-gallery-container">
-          <ImageGallery />
-          <ImageGallery />
-          <ImageGallery />
-          <ImageGallery />
+          {images.map((character) => (
+            <ImageGallery
+              key={character.id}
+              image={character.image}
+              text={character.name}
+            />
+          ))}
         </div>
       </section>
     </div>
