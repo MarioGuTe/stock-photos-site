@@ -7,14 +7,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="main-content">
+      <section className="main-content">
         <div className="title-section">
           <h1>FantastiFotos</h1>
           <p>fotografías profesionales a tu alcance</p>
         </div>
         <Input />
-      </div>
-      <div className="categories-section">
+      </section>
+      <section className="categories-section">
         <h2>Categorías</h2>
         <div className="buttons-container">
           <CategoriesButton />
@@ -22,7 +22,10 @@ function App() {
           <CategoriesButton />
           <CategoriesButton />
         </div>
-      </div>
+      </section>
+      <section className="img-section">
+        <h2>Imágenes Royalty Free</h2>
+      </section>
     </div>
   );
 }

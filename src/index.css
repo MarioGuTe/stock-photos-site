@@ -134,3 +134,8 @@ input::placeholder {
   background: var(--primary-color);
   color: var(--secondary-color);
 }
+
+/* img section */
+.img-section h2 {
+  font-size: 1.25rem;
+}
