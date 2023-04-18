@@ -1,5 +1,6 @@
 import Header from "./assets/components/Header";
 import Input from "./assets/components/Input";
+import CategoriesButton from "./assets/components/CategoriesButton";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,15 @@ function App() {
           <p>fotografías profesionales a tu alcance</p>
         </div>
         <Input />
+      </div>
+      <div className="categories-section">
+        <h2>Categorías</h2>
+        <div className="buttons-container">
+          <CategoriesButton />
+          <CategoriesButton />
+          <CategoriesButton />
+          <CategoriesButton />
+        </div>
       </div>
     </div>
   );
