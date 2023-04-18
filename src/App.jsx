@@ -1,6 +1,7 @@
 import Header from "./assets/components/Header";
 import Input from "./assets/components/Input";
 import CategoriesButton from "./assets/components/CategoriesButton";
+import ImageGallery from "./assets/components/ImageGallery";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,12 @@ function App() {
       </section>
       <section className="img-section">
         <h2>Imágenes Royalty Free</h2>
+        <div className="img-gallery-container">
+          <ImageGallery />
+          <ImageGallery />
+          <ImageGallery />
+          <ImageGallery />
+        </div>
       </section>
     </div>
   );
