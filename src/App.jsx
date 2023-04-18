@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Header from "./assets/components/Header";
-import Input from "./assets/components/Input";
-import CategoriesButton from "./assets/components/CategoriesButton";
-import ImageGallery from "./assets/components/ImageGallery";
+import Header from "./components/Header";
+import Input from "./components/Input";
+import CategoriesButton from "./components/CategoriesButton";
+import ImageGallery from "./components/ImageGallery";
 import "./App.css";
 
 function App() {
