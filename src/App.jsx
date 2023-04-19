@@ -9,8 +9,8 @@ function App() {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
-
   const apiKey = import.meta.env.VITE_API_KEY;
+  const handleRetrievedText = (text) => setTerm(text);
 
   useEffect(() => {
     fetch(`https://api.pexels.com/v1/search?query=people`, {
@@ -21,11 +21,11 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setImages(data.photos);
-        // console.log(data);
+        console.log(data.photos);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [term]);
 
   return (
     <div className="App">
@@ -35,7 +35,7 @@ function App() {
           <h1>FantastiFotos</h1>
           <p>fotografías profesionales a tu alcance</p>
         </div>
-        <Input />
+        <Input retrievedText={handleRetrievedText} />
       </section>
       <section className="categories-section">
         <h2>Categorías</h2>
