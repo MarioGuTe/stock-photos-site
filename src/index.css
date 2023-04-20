@@ -160,6 +160,7 @@ input::placeholder {
 
 .img-container {
   width: 100%;
+  height: 270px;
 }
 
 .img-container img {
