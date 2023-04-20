@@ -7,24 +7,17 @@ import "./App.css";
 
 function App() {
   const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("dog");
+  // const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
-    setIsLoading(true);
-    await fetch(`https://api.pexels.com/v1/search?query=${searchQuery}`, {
-      headers: {
-        Authorization: apiKey,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data.photos);
-        console.log(data.photos);
-        setIsLoading(false);
-      })
-      .catch((error) => console.log(error));
+    let response = await fetch(
+      `https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo&pretty=true`
+    );
+    let data = await response.json();
+    let iterableData = data.hits;
+    setImages(iterableData);
   };
 
   useEffect(() => {
@@ -46,7 +39,7 @@ function App() {
           <p>fotografías profesionales a tu alcance</p>
         </div>
         <div className="input-container">
-          <input
+          {/* <input
             type="text"
             placeholder="Buscar"
             onKeyDown={onKeyDownHandler}
@@ -54,7 +47,7 @@ function App() {
               setSearchQuery(e.target.value);
             }}
             value={searchQuery}
-          />
+          /> */}
         </div>
         {/* <Input
           searchQuery={searchQuery}
@@ -76,8 +69,8 @@ function App() {
           {images.map((image) => (
             <ImageGallery
               key={image.id}
-              image={image.src.large}
-              description={image.alt}
+              image={image.webformatURL}
+              description={image.tags}
             />
           ))}
         </div>
