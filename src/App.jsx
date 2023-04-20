@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
-// import Input from "./components/Input";
+import Input from "./components/Input";
 import CategoriesButton from "./components/CategoriesButton";
 import ImageGallery from "./components/ImageGallery";
 import "./App.css";
@@ -22,13 +22,7 @@ function App() {
 
   useEffect(() => {
     getPhotos();
-  }, []);
-
-  const onKeyDownHandler = (e) => {
-    if (e.keyCode === 13) {
-      getPhotos();
-    }
-  };
+  }, [searchQuery]);
 
   return (
     <div className="App">
@@ -38,21 +32,8 @@ function App() {
           <h1>FantastiFotos</h1>
           <p>fotografías profesionales a tu alcance</p>
         </div>
-        <div className="input-container">
-          {/* <input
-            type="text"
-            placeholder="Buscar"
-            onKeyDown={onKeyDownHandler}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
-            value={searchQuery}
-          /> */}
-        </div>
-        {/* <Input
-          searchQuery={searchQuery}
-          onSearchInputChange={handleSearchInputChange}
-        /> */}
+        <div className="input-container"></div>
+        <Input searchText={(text) => setSearchQuery(text)} />
       </section>
       <section className="categories-section">
         <h2>Categorías</h2>
