@@ -19,7 +19,7 @@ const DetailsPage = () => {
         </div>
         <div className="details-download-button">
           <button>Descargar</button>
-          <p>icon</p>
+          <FaAngleDown className="details-angle-down" />
         </div>
       </section>
       <section className="details-image-section">
