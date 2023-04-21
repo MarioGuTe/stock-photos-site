@@ -1,12 +1,16 @@
 import React from "react";
+import { FaAngleDown, FaArrowLeft, FaSearch } from "react-icons/fa";
 
 const DetailsPage = () => {
   return (
     <>
       <header className="details-header">
-        <div className="go-back-container"></div>
+        <div className="arrow-left-container">
+          <FaArrowLeft className="arrow-left" />
+        </div>
         <div className="details-input-container">
-          <input type="text" />
+          <input type="text" placeholder="Buscar" />
+          <FaSearch className="details-search-icon" />
         </div>
       </header>
       <section className="details-buttons">
