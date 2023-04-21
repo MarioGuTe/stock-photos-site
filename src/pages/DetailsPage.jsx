@@ -16,7 +16,7 @@ const DetailsPage = () => {
           <p>icon</p>
         </div>
       </section>
-      <section className="details-img-section">
+      <section className="details-image-section">
         <div className="details-image-container">
           <img
             src="https://images.pexels.com/photos/11631883/pexels-photo-11631883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

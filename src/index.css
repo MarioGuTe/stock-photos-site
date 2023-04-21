@@ -169,3 +169,41 @@ input::placeholder {
   height: 100%;
   object-fit: cover;
 }
+
+/* Details Page */
+/* Details Header */
+.details-header {
+  display: flex;
+}
+
+.details-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  width: 90%;
+  padding: 10% 0;
+}
+
+.details-download-button {
+  display: flex;
+}
+
+/* Details image section */
+.details-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-image-container {
+  width: 90%;
+}
+
+.details-image-container img {
+  width: 100%;
+}
+
+.details-info-container {
+  width: 90%;
+}
