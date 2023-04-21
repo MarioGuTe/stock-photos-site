@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-const CategoriesButton = () => {
+const CategoriesButton = ({ category, searchButton }) => {
+  const handleOnClick = (e) => {
+    let buttonValue = e.target.value;
+    searchButton(buttonValue);
+  };
+
   return (
     <>
-      <button className="categorie-btn">Categoría</button>
+      <button
+        className="categorie-btn"
+        value={category}
+        onClick={handleOnClick}
+      >
+        {category}
+      </button>
     </>
   );
 };

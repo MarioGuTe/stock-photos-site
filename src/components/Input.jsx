@@ -7,6 +7,7 @@ const Input = ({ searchText }) => {
   const onKeyDownHandler = (e) => {
     if (e.key === "Enter") {
       searchText(text);
+      e.target.value = "";
     }
   };
 

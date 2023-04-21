@@ -1,10 +1,4 @@
 import { useState, useEffect } from "react";
-// import {
-//   Header,
-//   CategoriesButton,
-//   Input,
-//   ImageGallery,
-// } from "../components/index";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import CategoriesButton from "../components/CategoriesButton";
@@ -12,8 +6,8 @@ import ImageGallery from "../components/ImageGallery";
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
-  //   // const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [buttonQuery, setButtonQuery] = useState("");
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
@@ -25,9 +19,22 @@ const HomePage = () => {
     setImages(iterableData);
   };
 
+  const getButtonPhotos = async () => {
+    let response = await fetch(
+      `https://pixabay.com/api/?key=${apiKey}&q=${buttonQuery}&image_type=photo&pretty=true`
+    );
+    let data = await response.json();
+    let iterableData = data.hits;
+    setImages(iterableData);
+  };
+
   useEffect(() => {
     getPhotos();
   }, [searchQuery]);
+
+  useEffect(() => {
+    getButtonPhotos();
+  }, [buttonQuery]);
 
   return (
     <div>
@@ -44,10 +51,22 @@ const HomePage = () => {
       <section className="categories-section">
         <h2>Categorías</h2>
         <div className="buttons-container">
-          <CategoriesButton />
-          <CategoriesButton />
-          <CategoriesButton />
-          <CategoriesButton />
+          <CategoriesButton
+            category="Outdoors"
+            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+          />
+          <CategoriesButton
+            category="pets"
+            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+          />
+          <CategoriesButton
+            category="wildlife"
+            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+          />
+          <CategoriesButton
+            category="wallpapers"
+            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+          />
         </div>
       </section>
       <section className="img-section">
