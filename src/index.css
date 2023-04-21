@@ -221,6 +221,16 @@ details-input-container input::placeholder {
   padding: 10% 0;
 }
 
+.details-heart-container {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #b6b6b6;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .details-download-button {
   display: flex;
 }
@@ -239,6 +249,8 @@ details-input-container input::placeholder {
 
 .details-image-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .details-info-container {

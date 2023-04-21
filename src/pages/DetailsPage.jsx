@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAngleDown, FaArrowLeft, FaSearch } from "react-icons/fa";
+import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 
 const DetailsPage = () => {
   return (
@@ -14,7 +14,9 @@ const DetailsPage = () => {
         </div>
       </header>
       <section className="details-buttons">
-        <p>heart</p>
+        <div className="details-heart-container">
+          <FaRegHeart className="details-heart" />
+        </div>
         <div className="details-download-button">
           <button>Descargar</button>
           <p>icon</p>
