@@ -7,7 +7,6 @@ import ImageGallery from "../components/ImageGallery";
 const HomePage = () => {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [buttonQuery, setButtonQuery] = useState("");
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
@@ -19,22 +18,9 @@ const HomePage = () => {
     setImages(iterableData);
   };
 
-  const getButtonPhotos = async () => {
-    let response = await fetch(
-      `https://pixabay.com/api/?key=${apiKey}&q=${buttonQuery}&image_type=photo&pretty=true`
-    );
-    let data = await response.json();
-    let iterableData = data.hits;
-    setImages(iterableData);
-  };
-
   useEffect(() => {
     getPhotos();
   }, [searchQuery]);
-
-  useEffect(() => {
-    getButtonPhotos();
-  }, [buttonQuery]);
 
   return (
     <div>
@@ -53,19 +39,19 @@ const HomePage = () => {
         <div className="buttons-container">
           <CategoriesButton
             category="Outdoors"
-            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+            searchButton={(buttonValue) => setSearchQuery(buttonValue)}
           />
           <CategoriesButton
             category="pets"
-            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+            searchButton={(buttonValue) => setSearchQuery(buttonValue)}
           />
           <CategoriesButton
             category="wildlife"
-            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+            searchButton={(buttonValue) => setSearchQuery(buttonValue)}
           />
           <CategoriesButton
             category="wallpapers"
-            searchButton={(buttonValue) => setButtonQuery(buttonValue)}
+            searchButton={(buttonValue) => setSearchQuery(buttonValue)}
           />
         </div>
       </section>
