@@ -1,12 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 
 const DetailsPage = () => {
+  const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
+
   return (
     <>
       <header className="details-header">
         <div className="arrow-left-container">
-          <FaArrowLeft className="arrow-left" />
+          <NavLink className={setActiveClass} end to="/">
+            <FaArrowLeft className="arrow-left" />
+          </NavLink>
         </div>
         <div className="details-input-container">
           <input type="text" placeholder="Buscar" />

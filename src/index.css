@@ -21,6 +21,18 @@ body,
   font-family: "Poppins", sans-serif;
 }
 
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 /* Main Page mobile*/
 /* Main Page Header */
 .header {
