@@ -261,6 +261,7 @@ input::placeholder {
 
 .arrow-left {
   cursor: pointer;
+  color: #a3a2a2;
 }
 
 .details-input-container {
@@ -320,7 +321,12 @@ details-input-container input::placeholder {
   font-size: 1rem;
   font-weight: 600;
   color: var(--secondary-color);
-  background: var(--primary-color);
+  background: linear-gradient(
+    89.9deg,
+    rgb(102, 64, 123) 0%,
+    rgb(252, 41, 119) 100%,
+    rgb(251, 168, 214) 100.1%
+  );
   border: none;
   border-radius: 4px;
   padding: 0 55px 0 14px;
@@ -340,10 +346,12 @@ details-input-container input::placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.4em;
 }
 
 .details-image-container {
   width: 90%;
+  height: 580px;
 }
 
 .details-image-container img {
@@ -354,7 +362,6 @@ details-input-container input::placeholder {
 
 .details-user-container {
   display: flex;
-
   align-items: center;
   gap: 0.5em;
   width: 90%;
