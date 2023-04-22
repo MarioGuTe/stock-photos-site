@@ -1,10 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 
 const DetailsPage = () => {
   const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
-
+  const location = useLocation();
   return (
     <>
       <header className="details-header">
@@ -29,13 +29,13 @@ const DetailsPage = () => {
       </section>
       <section className="details-image-section">
         <div className="details-image-container">
-          <img
-            src="https://images.pexels.com/photos/11631883/pexels-photo-11631883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="hola"
-          />
+          <img src={location.state.photo} alt="hola" />
+        </div>
+        <div className="details-user-container">
+          <p>Foto cortesía de: {location.state.user}</p>
+          <img src={location.state.userImage} alt="photo-provider" />
         </div>
         <div className="details-info-container">
-          <p>info 1</p>
           <p>info 2</p>
           <p>info 3</p>
         </div>
