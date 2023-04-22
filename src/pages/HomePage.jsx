@@ -66,6 +66,7 @@ const HomePage = () => {
               photo={image.largeImageURL}
               user={image.user}
               userImage={image.userImageURL}
+              tags={image.tags}
             />
           ))}
         </div>

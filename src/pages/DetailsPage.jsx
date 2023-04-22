@@ -5,6 +5,8 @@ import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 const DetailsPage = () => {
   const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
   const location = useLocation();
+  const tags = location.state.tags.split(",");
+
   return (
     <>
       <header className="details-header">
@@ -32,9 +34,9 @@ const DetailsPage = () => {
           <img src={location.state.photo} alt="hola" />
         </div>
         <div className="details-info-container">
-          <p>info 2</p>
-          <p>info 2</p>
-          <p>info 3</p>
+          {tags.map((tag) => (
+            <p key={tag}>#{tag.trimStart()}</p>
+          ))}
         </div>
         <div className="details-user-container">
           <p>Foto cortesía de: {location.state.user}</p>
