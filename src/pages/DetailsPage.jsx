@@ -1,11 +1,17 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
+import { saveAs } from "file-saver";
 
 const DetailsPage = () => {
   const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
   const location = useLocation();
   const tags = location.state.tags.split(",");
+
+  const handleClick = () => {
+    let url = location.state.photo;
+    saveAs(url, `${tags}-from-fantastifotos.jpg`);
+  };
 
   return (
     <>
@@ -25,7 +31,7 @@ const DetailsPage = () => {
           <FaRegHeart className="details-heart" />
         </div>
         <div className="details-download-button">
-          <button>Descargar</button>
+          <button onClick={handleClick}>Descargar</button>
           <FaAngleDown className="details-angle-down" />
         </div>
       </section>
