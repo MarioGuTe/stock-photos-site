@@ -29,9 +29,6 @@ const DetailsPage = () => {
           <DarkMode />
         </header>
         <section className="details-buttons">
-          <div className="details-heart-container">
-            <FaRegHeart className="details-heart" />
-          </div>
           <div className="details-download-button">
             <button onClick={handleClick}>Descargar</button>
             <FaAngleDown className="details-angle-down" />
