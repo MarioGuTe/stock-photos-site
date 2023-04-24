@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 import { saveAs } from "file-saver";
+import DarkMode from "../components/DarkMode/DarkMode";
 
 const DetailsPage = () => {
   const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
@@ -22,10 +23,10 @@ const DetailsPage = () => {
               <FaArrowLeft className="arrow-left" />
             </NavLink>
           </div>
-          <div className="details-input-container">
-            <input type="text" placeholder="Buscar" />
-            <FaSearch className="details-search-icon" />
+          <div className="details-title-container">
+            <h1>FantastiFotos</h1>
           </div>
+          <DarkMode />
         </header>
         <section className="details-buttons">
           <div className="details-heart-container">

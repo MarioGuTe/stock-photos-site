@@ -252,53 +252,38 @@ input:focus::placeholder {
 .details-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 20px;
 }
 
 .arrow-left-container {
-  position: absolute;
   align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
-  left: 20px;
   display: flex;
 }
 
 .arrow-left {
   cursor: pointer;
   color: var(--third-color);
+  margin-top: 10px;
 }
 
-.details-input-container {
-  position: relative;
+.details-title-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.details-input-container input {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+.details-title-container h1 {
+  font-size: 2.2rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--primary-color);
+  color: transparent;
   text-align: center;
-  padding: 8px 6% 8px 6%;
-  border-radius: 50px;
-  border: 2px solid var(--third-color);
-  color: var(--third-color);
-  background: var(--body-background);
-  outline: none;
-}
-
-details-input-container input::placeholder {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--third-color);
-  text-align: center;
-}
-
-.details-search-icon {
-  position: absolute;
-  left: 10px;
-  top: 14px;
-  color: var(--third-color);
 }
 
 /* details buttons section */
