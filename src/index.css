@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --primary-light-color: linear-gradient(
+  --primary-color: linear-gradient(
     89.9deg,
     rgb(102, 64, 123) 0%,
     rgb(252, 41, 119) 100%,
@@ -9,7 +9,7 @@
   );
   --secondary-color: white;
   --third-color: #bebbbb;
-  --fourth-color: hsl(0 0% 0%/0.85);
+  --body-background: white;
 }
 
 * {
@@ -47,7 +47,7 @@ a:visited {
 }
 
 .header-logo-container {
-  background: var(--primary-light-color);
+  background: var(--primary-color);
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -65,7 +65,7 @@ a:visited {
 .header-favorites-container p {
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--primary-light-color);
+  background-image: var(--primary-color);
   color: transparent;
   font-size: 1rem;
   font-weight: 600;
@@ -86,7 +86,7 @@ h1 {
   font-size: 2.8rem;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--primary-light-color);
+  background-image: var(--primary-color);
   color: transparent;
 }
 
@@ -136,7 +136,7 @@ input::placeholder {
   font-size: 1.3rem;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--primary-light-color);
+  background-image: var(--primary-color);
   color: transparent;
 }
 
@@ -149,20 +149,20 @@ input::placeholder {
 
 .categorie-btn {
   font-family: "Poppins", sans-serif;
-  border: px solid;
-  border-image: var(--primary-light-color) 1;
+  border: 2px solid;
+  border-image: var(--primary-color) 1;
   font-size: 0.92rem;
   font-weight: 700;
   border-radius: 4px;
   padding: 5px 6px;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--primary-light-color);
+  background-image: var(--primary-color);
   color: transparent;
 }
 
 .categorie-btn:focus {
-  background: var(--primary-light-color);
+  background: var(--primary-color);
   color: transparent;
   color: var(--secondary-color);
   border: none;
@@ -185,7 +185,7 @@ input::placeholder {
   margin-left: 1em;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: var(--primary-light-color);
+  background-image: var(--primary-color);
   color: transparent;
 }
 
@@ -287,7 +287,7 @@ details-input-container input::placeholder {
   font-size: 1rem;
   font-weight: 600;
   color: var(--secondary-color);
-  background: var(--primary-light-color);
+  background: var(--primary-color);
   border: none;
   border-radius: 4px;
   padding: 0 55px 0 14px;
