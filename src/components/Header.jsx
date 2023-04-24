@@ -1,4 +1,5 @@
 import React from "react";
+import DarkMode from "./DarkMode/DarkMode";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
         <p>FF</p>
       </div>
       <div className="header-favorites-container">
-        <p>Favoritos</p>
+        <DarkMode />
       </div>
     </div>
   );
