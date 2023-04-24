@@ -23,7 +23,7 @@ const HomePage = () => {
   }, [searchQuery]);
 
   return (
-    <div>
+    <div className="home-page-body">
       <Header />
       <section className="main-content">
         <div className="title-section">

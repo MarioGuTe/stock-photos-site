@@ -15,42 +15,44 @@ const DetailsPage = () => {
 
   return (
     <>
-      <header className="details-header">
-        <div className="arrow-left-container">
-          <NavLink className={setActiveClass} end to="/">
-            <FaArrowLeft className="arrow-left" />
-          </NavLink>
-        </div>
-        <div className="details-input-container">
-          <input type="text" placeholder="Buscar" />
-          <FaSearch className="details-search-icon" />
-        </div>
-      </header>
-      <section className="details-buttons">
-        <div className="details-heart-container">
-          <FaRegHeart className="details-heart" />
-        </div>
-        <div className="details-download-button">
-          <button onClick={handleClick}>Descargar</button>
-          <FaAngleDown className="details-angle-down" />
-        </div>
-      </section>
-      <section className="details-image-section">
-        <div className="details-image-container">
-          <img src={location.state.photo} alt="hola" />
-        </div>
-        <div className="details-info-container">
-          {tags.map((tag) => (
-            <p key={tag}>#{tag.trimStart()}</p>
-          ))}
-        </div>
-        <div className="details-user-container">
-          <p>Foto cortesía de: {location.state.user}</p>
-          <div className="user-image-container">
-            <img src={location.state.userImage} alt="photo-provider" />
+      <div className="details-body">
+        <header className="details-header">
+          <div className="arrow-left-container">
+            <NavLink className={setActiveClass} end to="/">
+              <FaArrowLeft className="arrow-left" />
+            </NavLink>
           </div>
-        </div>
-      </section>
+          <div className="details-input-container">
+            <input type="text" placeholder="Buscar" />
+            <FaSearch className="details-search-icon" />
+          </div>
+        </header>
+        <section className="details-buttons">
+          <div className="details-heart-container">
+            <FaRegHeart className="details-heart" />
+          </div>
+          <div className="details-download-button">
+            <button onClick={handleClick}>Descargar</button>
+            <FaAngleDown className="details-angle-down" />
+          </div>
+        </section>
+        <section className="details-image-section">
+          <div className="details-image-container">
+            <img src={location.state.photo} alt="hola" />
+          </div>
+          <div className="details-info-container">
+            {tags.map((tag) => (
+              <p key={tag}>#{tag.trimStart()}</p>
+            ))}
+          </div>
+          <div className="details-user-container">
+            <p>Foto cortesía de: {location.state.user}</p>
+            <div className="user-image-container">
+              <img src={location.state.userImage} alt="photo-provider" />
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
