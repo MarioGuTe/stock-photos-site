@@ -3,10 +3,12 @@ import Header from "../components/Header";
 import Input from "../components/Input";
 import CategoriesButton from "../components/CategoriesButton";
 import ImageGallery from "../components/ImageGallery";
+import ImageGallerySkeleton from "../components/ImageGallerySkeleton";
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
@@ -16,6 +18,7 @@ const HomePage = () => {
     let data = await response.json();
     let iterableData = data.hits;
     setImages(iterableData);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -58,6 +61,10 @@ const HomePage = () => {
       <section className="img-section">
         <h2>Imágenes Royalty Free</h2>
         <div className="img-gallery-container">
+          {isLoading &&
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+              <ImageGallerySkeleton key={n} />
+            ))}
           {images.map((image) => (
             <ImageGallery
               key={image.id}
