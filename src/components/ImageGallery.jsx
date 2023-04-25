@@ -9,7 +9,12 @@ const ImageGallery = ({ image, description, photo, user, userImage, tags }) => {
 
   return (
     <div className="img-container">
-      <img src={image} alt={description} onClick={goToDetailsPage} />
+      <img
+        loading="lazy"
+        src={image}
+        alt={description}
+        onClick={goToDetailsPage}
+      />
     </div>
   );
 };
