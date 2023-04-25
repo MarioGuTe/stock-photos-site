@@ -69,7 +69,6 @@ const HomePage = () => {
             <ImageGallery
               key={image.id}
               image={image.webformatURL}
-              description={image.tags}
               photo={image.largeImageURL}
               user={image.user}
               userImage={image.userImageURL}
