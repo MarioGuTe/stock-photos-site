@@ -36,7 +36,7 @@ const DetailsPage = () => {
         </section>
         <section className="details-image-section">
           <div className="details-image-container">
-            <img src={location.state.photo} alt="hola" />
+            <img src={location.state.photo} alt="loading..." />
           </div>
           <div className="details-info-container">
             {tags.map((tag) => (
