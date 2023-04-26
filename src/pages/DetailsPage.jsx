@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
 import { saveAs } from "file-saver";
 import DarkMode from "../components/DarkMode/DarkMode";
 
 const DetailsPage = () => {
+  const [open, setOpen] = useState(false);
   const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
   const location = useLocation();
   const tags = location.state.tags.split(",");
 
-  const handleClick = () => {
-    let url = location.state.photo;
-    saveAs(url, `${tags}-from-fantastifotos.jpg`);
+  const handleClick = (e) => {
+    if (e.target.textContent.includes("S")) {
+      console.log(e.target.textContent);
+    } else if (e.target.textContent.includes("M")) {
+      console.log(e.target.textContent);
+    } else if (e.target.textContent.includes("L")) {
+      console.log(e.target.textContent);
+    }
+
+    // let url = location.state.photo;
+    // saveAs(url, `${tags}-from-fantastifotos.jpg`);
   };
+
+  useEffect(() => {
+    let handler = () => {
+      setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+  });
 
   return (
     <>
@@ -30,13 +46,29 @@ const DetailsPage = () => {
         </header>
         <section className="details-buttons">
           <div className="details-download-button">
-            <button onClick={handleClick}>Descargar</button>
+            <button
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              Descargar
+            </button>
             {/* <FaAngleDown className="details-angle-down" /> */}
-            <div className="dropdown-menu-container">
+            <div
+              className={`dropdown-menu-container ${
+                open ? "active" : undefined
+              }`}
+            >
               <ul>
-                <li>100 X 200 S-size</li>
-                <li>100 X 200 M-size</li>
-                <li>100 X 200 L-size</li>
+                <li onClick={handleClick}>
+                  150 X 99 <span>S-size</span>
+                </li>
+                <li onClick={handleClick}>
+                  640 X 426 <span>M-size</span>
+                </li>
+                <li onClick={handleClick}>
+                  5363 X 3575 <span>L-size</span>
+                </li>
               </ul>
             </div>
           </div>
