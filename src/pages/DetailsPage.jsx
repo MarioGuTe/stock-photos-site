@@ -31,7 +31,14 @@ const DetailsPage = () => {
         <section className="details-buttons">
           <div className="details-download-button">
             <button onClick={handleClick}>Descargar</button>
-            <FaAngleDown className="details-angle-down" />
+            {/* <FaAngleDown className="details-angle-down" /> */}
+            <div className="dropdown-menu-container">
+              <ul>
+                <li>100 X 200 S-size</li>
+                <li>100 X 200 M-size</li>
+                <li>100 X 200 L-size</li>
+              </ul>
+            </div>
           </div>
         </section>
         <section className="details-image-section">
