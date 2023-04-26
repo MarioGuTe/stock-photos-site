@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaAngleDown, FaArrowLeft, FaSearch, FaRegHeart } from "react-icons/fa";
+import { FaAngleDown, FaArrowLeft } from "react-icons/fa";
 import { saveAs } from "file-saver";
 import DarkMode from "../components/DarkMode/DarkMode";
 
 const DetailsPage = () => {
   const [open, setOpen] = useState(false);
-  const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
+  // const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
   const location = useLocation();
   const tags = location.state.tags.split(",");
+  let menuRef = useRef();
+  const handleToggle = (e) => {
+    e.stopPropagation();
+    setOpen((open) => !open);
+  };
 
   const handleClick = (e) => {
     if (e.target.textContent.includes("S")) {
@@ -24,18 +29,24 @@ const DetailsPage = () => {
   };
 
   useEffect(() => {
-    let handler = () => {
-      setOpen(false);
+    let handler = (e) => {
+      e.stopPropagation();
+      if (!menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
     };
-    document.addEventListener("mousedown", handler);
-  });
 
+    document.addEventListener("mousedown", handler, true);
+    return () => {
+      document.removeEventListener("mousedown", handler, true);
+    };
+  });
   return (
     <>
       <div className="details-body">
         <header className="details-header">
           <div className="arrow-left-container">
-            <NavLink className={setActiveClass} end to="/">
+            <NavLink end to="/">
               <FaArrowLeft className="arrow-left" />
             </NavLink>
           </div>
@@ -46,11 +57,7 @@ const DetailsPage = () => {
         </header>
         <section className="details-buttons">
           <div className="details-download-button">
-            <button
-              onClick={() => {
-                setOpen(!open);
-              }}
-            >
+            <button ref={menuRef} onClick={handleToggle}>
               Descargar
             </button>
             {/* <FaAngleDown className="details-angle-down" /> */}
