@@ -134,8 +134,8 @@ h1 {
 }
 
 .input-container input:focus {
-  border: 2px solid var(--input-border);
-  color: var(--input-border);
+  border: 2px solid rgba(var(--input-border));
+  color: rgba(var(--input-border));
 }
 
 input::placeholder {
