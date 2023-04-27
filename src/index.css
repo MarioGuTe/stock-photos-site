@@ -263,12 +263,6 @@ input:focus::placeholder {
 }
 
 /* Skeleton styles*/
-
-/* .skeleton {
-  animation: skeleton-loading 1s linear infinite alternate;
-  
-} */
-
 .skeleton-img-container {
   width: 100%;
   min-height: 270px;
@@ -520,8 +514,16 @@ li:hover {
 }
 
 @media (min-width: 1024px) {
+  /* img section */
   .img-section h2 {
-    margin-left: 4.85em;
+    margin-left: 3.8em;
+    font-size: 1.6rem;
+  }
+
+  .download-icon {
+    bottom: 14px;
+    right: 14px;
+    font-size: 1.8rem;
   }
 
   .img-gallery-container {
