@@ -84,15 +84,6 @@ a:visited {
   font-weight: 600;
 }
 
-.header-favorites-container p {
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: var(--primary-color);
-  color: transparent;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
 /* Main Content */
 .main-content {
   display: flex;
@@ -498,6 +489,8 @@ li:hover {
   font-size: 1.2rem;
 }
 
+/* Media Queries */
+
 @media (min-width: 768px) {
   .img-section h2 {
     margin-left: 1.65em;
@@ -514,6 +507,19 @@ li:hover {
 }
 
 @media (min-width: 1024px) {
+  .header-logo-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-logo-container p {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
   /* input */
   .input-container input {
     width: 35%;
@@ -568,6 +574,6 @@ li:hover {
   }
 
   .img-container {
-    min-height: 600px;
+    min-height: 580px;
   }
 }
