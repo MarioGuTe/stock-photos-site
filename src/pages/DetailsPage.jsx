@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaAngleDown, FaArrowLeft } from "react-icons/fa";
+import { FaAngleDown, FaArrowLeft, FaAngleRight } from "react-icons/fa";
 import { saveAs } from "file-saver";
 import DarkMode from "../components/DarkMode/DarkMode";
 
@@ -68,13 +68,28 @@ const DetailsPage = () => {
             >
               <ul>
                 <li onClick={handleClick}>
-                  150 X 99 <span>S-size</span>
+                  <span>150×99</span>
+                  <span>small</span>
+                  <span>JPG</span>
+                  <span className="details-angle-right">
+                    <FaAngleRight className="icon-right" />
+                  </span>
                 </li>
                 <li onClick={handleClick}>
-                  640 X 426 <span>M-size</span>
+                  <span>640×426</span>
+                  <span>medium</span>
+                  <span>JPG</span>
+                  <span className="details-angle-right">
+                    <FaAngleRight className="icon-right" />
+                  </span>
                 </li>
                 <li onClick={handleClick}>
-                  5363 X 3575 <span>L-size</span>
+                  <span>5363×3575</span>
+                  <span>large</span>
+                  <span>JPG</span>
+                  <span className="details-angle-right">
+                    <FaAngleRight className="icon-right" />
+                  </span>
                 </li>
               </ul>
             </div>

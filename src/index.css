@@ -195,6 +195,7 @@ input:focus::placeholder {
   background-clip: text;
   background-image: var(--primary-color);
   color: transparent;
+  cursor: pointer;
 }
 
 .categorie-btn:focus {
@@ -336,8 +337,7 @@ span {
   position: relative;
   gap: 0.5em;
   width: 100%;
-  padding: 10% 0 2% 0;
-  padding-right: 5%;
+  padding: 10% 5% 2% 0;
 }
 
 .details-download-button {
@@ -359,6 +359,7 @@ span {
   padding: 0 55px 0 14px;
   height: 35px;
   align-self: flex-end;
+  cursor: pointer;
 }
 /* dropdown menu */
 
@@ -367,11 +368,11 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
   list-style: none;
   position: absolute;
   top: 106%;
-  background: var(--body-background);
+  background: white;
   border-radius: 4px;
   box-shadow: 4px 4px 4px rgba(var(--input-border), 0.4),
     -4px -4px 4px rgba(var(--input-border), 0.4);
@@ -387,16 +388,12 @@ span {
 }
 
 .dropdown-menu-container ul {
-  text-align: center;
-  font-size: 1.2rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   width: 100%;
-  gap: 1em;
-  padding: 15px 0;
+  padding-right: 5px;
 }
 
 .details-download-button .details-angle-down {
@@ -408,22 +405,32 @@ span {
 }
 
 li {
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: var(--primary-color);
-  color: transparent;
-  font-weight: 700;
-  font-size: 1.2rem;
-  width: 80%;
+  color: black;
+  font-weight: 400;
+  font-size: 0.9rem;
+  width: 100%;
   border-radius: 6px;
-  padding: 10px;
+  padding: 10px 0px 10px 15px;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 5%;
+  letter-spacing: -1px;
+  gap: 5px;
+}
+
+.details-angle-right {
+  pointer-events: none;
+  display: flex;
+  height: 100%;
+  font-size: 1rem;
+  align-items: center;
+  color: black;
 }
 
 li:hover {
-  color: var(--secondary-color);
-  background: var(--primary-color);
+  background: #ece7e7;
 }
 
 /* Details image section */
