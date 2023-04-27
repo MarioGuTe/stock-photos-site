@@ -9,6 +9,7 @@ const HomePage = () => {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const skeletonArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
@@ -66,9 +67,7 @@ const HomePage = () => {
         <h2>Imágenes Royalty Free</h2>
         <div className="img-gallery-container">
           {isLoading &&
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-              <ImageGallerySkeleton key={n} />
-            ))}
+            skeletonArray.map((n) => <ImageGallerySkeleton key={n} />)}
           {images.map((image) => (
             <ImageGallery
               key={image.id}
