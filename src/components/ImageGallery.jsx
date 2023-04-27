@@ -10,11 +10,30 @@ const ImageGallery = ({
   user,
   userImage,
   tags,
+  smallWidth,
+  smallHeight,
+  mediumWidth,
+  mediumHeight,
+  largeWidth,
+  largeHeight,
 }) => {
   const navigate = useNavigate();
   const goToDetailsPage = () => {
     navigate("/details", {
-      state: { smallPhoto, mediumPhoto, photo, user, userImage, tags },
+      state: {
+        smallPhoto,
+        mediumPhoto,
+        photo,
+        user,
+        userImage,
+        tags,
+        smallWidth,
+        smallHeight,
+        mediumWidth,
+        mediumHeight,
+        largeWidth,
+        largeHeight,
+      },
     });
   };
 

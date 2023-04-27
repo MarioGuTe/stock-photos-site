@@ -78,6 +78,12 @@ const HomePage = () => {
               user={image.user}
               userImage={image.userImageURL}
               tags={image.tags}
+              smallWidth={image.previewWidth}
+              smallHeight={image.previewHeight}
+              mediumWidth={image.webformatWidth}
+              mediumHeight={image.webformatHeight}
+              largeWidth={image.imageWidth}
+              largeHeight={image.imageHeight}
             />
           ))}
         </div>

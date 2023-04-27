@@ -68,7 +68,9 @@ const DetailsPage = () => {
             >
               <ul>
                 <li onClick={downloadPhoto}>
-                  <span>150×99</span>
+                  <span>
+                    {location.state.smallWidth}×{location.state.smallHeight}
+                  </span>
                   <span>small</span>
                   <span>JPG</span>
                   <span className="details-angle-right">
@@ -76,7 +78,9 @@ const DetailsPage = () => {
                   </span>
                 </li>
                 <li onClick={downloadPhoto}>
-                  <span>640×426</span>
+                  <span>
+                    {location.state.mediumWidth}×{location.state.mediumHeight}
+                  </span>
                   <span>medium</span>
                   <span>JPG</span>
                   <span className="details-angle-right">
@@ -84,7 +88,9 @@ const DetailsPage = () => {
                   </span>
                 </li>
                 <li onClick={downloadPhoto}>
-                  <span>5363×3575</span>
+                  <span>
+                    {location.state.largeWidth}×{location.state.largeHeight}
+                  </span>
                   <span>large</span>
                   <span>JPG</span>
                   <span className="details-angle-right">
