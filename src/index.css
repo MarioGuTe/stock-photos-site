@@ -503,3 +503,33 @@ li:hover {
   font-weight: 600;
   font-size: 1.2rem;
 }
+
+@media (min-width: 768px) {
+  .img-section h2 {
+    margin-left: 1.65em;
+  }
+
+  .img-gallery-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 2em 0 2em;
+  }
+
+  .img-container {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .img-section h2 {
+    margin-left: 4.85em;
+  }
+
+  .img-gallery-container {
+    padding: 0 6em 0 6em;
+    gap: 1rem;
+  }
+
+  .img-container {
+    min-height: 600px;
+  }
+}
