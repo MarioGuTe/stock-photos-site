@@ -514,6 +514,20 @@ li:hover {
 }
 
 @media (min-width: 1024px) {
+  /* input */
+  .input-container input {
+    width: 35%;
+    height: 50px;
+  }
+
+  input::placeholder {
+    font-size: 1.3rem;
+  }
+  .input-container .icon {
+    top: 1.05rem;
+    left: 34%;
+  }
+
   /* img section */
   .img-section h2 {
     margin-left: 3.8em;

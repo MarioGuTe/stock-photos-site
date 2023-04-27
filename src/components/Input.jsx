@@ -16,7 +16,7 @@ const Input = ({ searchText }) => {
       <FaSearch className="icon" />
       <input
         type="text"
-        placeholder="Buscar"
+        placeholder="Buscar Fotografías"
         onChange={(e) => setText(e.target.value)}
         onKeyDown={onKeyDownHandler}
       />
