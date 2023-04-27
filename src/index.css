@@ -524,11 +524,33 @@ li:hover {
     font-size: 1.3rem;
   }
   .input-container .icon {
-    top: 1.05rem;
+    top: 1rem;
     left: 34%;
+    font-size: 1.2rem;
+  }
+  /* Categories */
+  .categories-section {
+    gap: 1.8em;
+  }
+
+  .categories-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .categorie-btn {
+    font-size: 1rem;
+    padding: 5px 1.8rem;
+  }
+  .categorie-btn:focus {
+    /* font-size: 1rem; */
+    padding: 7px 1.8rem;
   }
 
   /* img section */
+
+  .img-section {
+    margin-top: 1.8rem;
+  }
   .img-section h2 {
     margin-left: 3.8em;
     font-size: 1.6rem;
