@@ -15,17 +15,17 @@ const DetailsPage = () => {
     setOpen((open) => !open);
   };
 
-  const handleClick = (e) => {
-    if (e.target.textContent.includes("S")) {
-      console.log(e.target.textContent);
-    } else if (e.target.textContent.includes("M")) {
-      console.log(e.target.textContent);
-    } else if (e.target.textContent.includes("L")) {
-      console.log(e.target.textContent);
+  const downloadPhoto = (e) => {
+    if (e.target.textContent.includes("small")) {
+      let url = location.state.smallPhoto;
+      saveAs(url, `${tags}-small.jpg`);
+    } else if (e.target.textContent.includes("medium")) {
+      let url = location.state.mediumPhoto;
+      saveAs(url, `${tags}-medium.jpg`);
+    } else if (e.target.textContent.includes("large")) {
+      let url = location.state.photo;
+      saveAs(url, `${tags}-large.jpg`);
     }
-
-    // let url = location.state.photo;
-    // saveAs(url, `${tags}-from-fantastifotos.jpg`);
   };
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const DetailsPage = () => {
               }`}
             >
               <ul>
-                <li onClick={handleClick}>
+                <li onClick={downloadPhoto}>
                   <span>150×99</span>
                   <span>small</span>
                   <span>JPG</span>
@@ -75,7 +75,7 @@ const DetailsPage = () => {
                     <FaAngleRight className="icon-right" />
                   </span>
                 </li>
-                <li onClick={handleClick}>
+                <li onClick={downloadPhoto}>
                   <span>640×426</span>
                   <span>medium</span>
                   <span>JPG</span>
@@ -83,7 +83,7 @@ const DetailsPage = () => {
                     <FaAngleRight className="icon-right" />
                   </span>
                 </li>
-                <li onClick={handleClick}>
+                <li onClick={downloadPhoto}>
                   <span>5363×3575</span>
                   <span>large</span>
                   <span>JPG</span>

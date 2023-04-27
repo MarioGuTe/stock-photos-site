@@ -1,10 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ImageGallery = ({ image, description, photo, user, userImage, tags }) => {
+const ImageGallery = ({
+  image,
+  description,
+  smallPhoto,
+  mediumPhoto,
+  photo,
+  user,
+  userImage,
+  tags,
+}) => {
   const navigate = useNavigate();
   const goToDetailsPage = () => {
-    navigate("/details", { state: { photo, user, userImage, tags } });
+    navigate("/details", {
+      state: { smallPhoto, mediumPhoto, photo, user, userImage, tags },
+    });
   };
 
   return (
