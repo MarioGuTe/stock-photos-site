@@ -12,13 +12,17 @@ const HomePage = () => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const getPhotos = async () => {
-    let response = await fetch(
-      `https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo&pretty=true`
-    );
-    let data = await response.json();
-    let iterableData = data.hits;
-    setImages(iterableData);
-    setIsLoading(false);
+    try {
+      let response = await fetch(
+        `https://pixabay.com/api/?key=${apiKey}&q=${searchQuery}&image_type=photo&pretty=true`
+      );
+      let data = await response.json();
+      let iterableData = data.hits;
+      setImages(iterableData);
+      setIsLoading(false);
+    } catch (error) {
+      console.log("Fetch error: ", error);
+    }
   };
 
   useEffect(() => {
