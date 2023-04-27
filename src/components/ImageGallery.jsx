@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaDownload } from "react-icons/fa";
 
 const ImageGallery = ({
   image,
@@ -45,6 +46,7 @@ const ImageGallery = ({
         alt={description}
         onClick={goToDetailsPage}
       />
+      <FaDownload className="download-icon" onClick={goToDetailsPage} />
     </div>
   );
 };
