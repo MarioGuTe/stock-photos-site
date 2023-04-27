@@ -576,4 +576,33 @@ li:hover {
   .img-container {
     min-height: 580px;
   }
+
+  /* details page */
+  .details-header {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .details-buttons {
+    display: flex;
+    padding: 1% 10% 0.5% 0;
+  }
+  .details-download-button {
+    min-width: 38%;
+  }
+  .details-download-button button {
+    font-size: 1.2rem;
+    padding: 0 50px 0 50px;
+    height: 40px;
+  }
+
+  .details-image-container {
+    height: 400px;
+  }
+  .details-header,
+  .details-image-container,
+  .details-info-container,
+  .details-user-container {
+    width: 80%;
+  }
 }
