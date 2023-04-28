@@ -489,6 +489,25 @@ li:hover {
   font-size: 1.2rem;
 }
 
+/* Modal */
+.modal {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  width: 250px;
+  height: 200px;
+  margin: auto;
+  z-index: 1000;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-color);
+  transition: all 0.6s ease-in-out;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {

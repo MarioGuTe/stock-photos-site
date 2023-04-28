@@ -3,9 +3,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import { FaAngleDown, FaArrowLeft, FaAngleRight } from "react-icons/fa";
 import { saveAs } from "file-saver";
 import DarkMode from "../components/DarkMode/DarkMode";
+import Modal from "../components/Modal";
 
 const DetailsPage = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   // const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
   const location = useLocation();
   const tags = location.state.tags.split(",");
@@ -17,8 +19,12 @@ const DetailsPage = () => {
 
   const downloadPhoto = (e) => {
     if (e.target.textContent.includes("small")) {
-      let url = location.state.smallPhoto;
-      saveAs(url, `${tags}-small.jpg`);
+      // let url = location.state.smallPhoto;
+      // saveAs(url, `${tags}-small.jpg`);
+      setOpenModal(true);
+      setTimeout(() => {
+        setOpenModal(false);
+      }, 5000);
     } else if (e.target.textContent.includes("medium")) {
       let url = location.state.mediumPhoto;
       saveAs(url, `${tags}-medium.jpg`);
@@ -117,6 +123,7 @@ const DetailsPage = () => {
             </div>
           </div>
         </section>
+        <Modal open={openModal}>Tu descarga comenzará en unos segundos</Modal>
       </div>
     </>
   );
