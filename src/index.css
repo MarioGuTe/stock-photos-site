@@ -259,7 +259,6 @@ input:focus::placeholder {
   min-height: 270px;
   max-height: 100%;
   border-radius: 4px;
-  /* background: var(--primary-color); */
   animation: skeleton-loading 0.4s linear infinite alternate;
 }
 
@@ -344,8 +343,8 @@ span {
 
 .details-download-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   position: relative;
   min-width: 60%;
 }
@@ -364,6 +363,15 @@ span {
   text-align: center;
   cursor: pointer;
 }
+.details-download-button .details-angle-down {
+  color: var(--secondary-color);
+  position: absolute;
+  font-size: 1.4rem;
+  right: 8px;
+  top: 8px;
+  height: 60%;
+}
+
 /* dropdown menu */
 
 .dropdown-menu-container {
@@ -382,11 +390,9 @@ span {
   transform: translateX(129%);
   transition: all 1s ease-in-out;
   opacity: 0;
-  /* pointer-events: none; */
 }
 
 .active {
-  /* pointer-events: revert; */
   opacity: 1;
   transition: all 1s ease-in-out;
   transform: translateX(0%);
@@ -399,14 +405,6 @@ span {
   align-items: center;
   width: 100%;
   padding-right: 5px;
-}
-
-.details-download-button .details-angle-down {
-  color: var(--secondary-color);
-  position: absolute;
-  font-size: 1.4rem;
-  right: 8px;
-  top: 6px;
 }
 
 li {
@@ -631,6 +629,10 @@ li:hover {
     font-size: 1.2rem;
     padding: 0 50px 0 50px;
     height: 40px;
+  }
+
+  .details-download-button .details-angle-down {
+    top: 10px;
   }
 
   .details-image-container {

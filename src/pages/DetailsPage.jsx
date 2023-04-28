@@ -73,7 +73,7 @@ const DetailsPage = () => {
             <button ref={menuRef} onClick={handleToggle}>
               Descargar
             </button>
-            {/* <FaAngleDown className="details-angle-down" /> */}
+            <FaAngleDown className="details-angle-down" />
             <div
               className={`dropdown-menu-container ${
                 open ? "active" : undefined
