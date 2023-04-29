@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const CategoriesButton = ({ category, searchButton }) => {
   const handleOnClick = (e) => {
     let buttonValue = e.target.value;
