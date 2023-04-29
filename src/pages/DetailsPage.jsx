@@ -7,7 +7,6 @@ import DarkMode from "../components/DarkMode/DarkMode";
 const DetailsPage = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
   const location = useLocation();
   const tags = location.state.tags.split(",");
   let menuRef = useRef();
@@ -116,7 +115,7 @@ const DetailsPage = () => {
         </section>
         <section className="details-image-section">
           <div className="details-image-container">
-            <img src={location.state.photo} alt="loading..." />
+            <img src={location.state.photo} alt={tags} />
           </div>
           <div className="details-info-container">
             {tags.map((tag) => (
