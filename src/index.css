@@ -41,6 +41,8 @@ body,
   overflow-x: hidden;
 }
 
+/* remove links default style */
+
 a:link {
   text-decoration: inherit;
   color: inherit;
@@ -383,7 +385,7 @@ span {
   list-style: none;
   position: absolute;
   top: 106%;
-  background: white;
+  background: var(--secondary-color);
   border-radius: 4px;
   box-shadow: 4px 4px 4px rgba(var(--input-border), 0.4),
     -4px -4px 4px rgba(var(--input-border), 0.4);
@@ -583,7 +585,6 @@ li:hover {
     padding: 5px 1.8rem;
   }
   .categorie-btn:focus {
-    /* font-size: 1rem; */
     padding: 7px 1.8rem;
   }
 
