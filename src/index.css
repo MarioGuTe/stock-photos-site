@@ -372,6 +372,7 @@ span {
   right: 8px;
   top: 8px;
   height: 60%;
+  pointer-events: none;
 }
 
 /* dropdown menu */
@@ -537,6 +538,10 @@ li:hover {
   .img-container {
     min-height: 400px;
   }
+
+  .skeleton-img-container {
+    min-height: 400px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -613,6 +618,11 @@ li:hover {
     min-height: 580px;
   }
 
+  .skeleton-img-container {
+    min-height: 580px;
+    max-height: 100%;
+  }
+
   /* details page */
   .details-header {
     justify-content: space-between;
@@ -639,6 +649,7 @@ li:hover {
   .details-image-container {
     height: 460px;
   }
+
   .details-header,
   .details-image-container,
   .details-info-container,
