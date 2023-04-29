@@ -3,8 +3,6 @@ import DetailsPage from "./pages/DetailsPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 
-import "./App.css";
-
 function App() {
   return (
     <>
